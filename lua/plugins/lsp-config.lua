@@ -24,25 +24,46 @@ return {
 
 			local lspconfig = require("lspconfig")
 
+			-- LUA LSP CONFIG
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
+
+			-- PYLSP CONFIG
 			lspconfig.pylsp.setup({
 				capabilities = capabilities,
-        -- if pylint is enabled this way it doesnt understand venv
-				-- settings = {
-				-- 	pylsp = {
-				-- 		plugins = {
-				-- 			pylint = {
-				-- 				enabled = true,
-				-- 			},
-				-- 		},
-				-- 	},
-				-- },
+				settings = {
+					pylsp = {
+						plugins = {
+							jedi_completion = {
+								-- include_class_objects = true,
+								-- include_function_objects = true,
+                fuzzy = true,
+							},
+							autopep8 = {
+								enabled = false,
+							},
+							mccabe = {
+								enabled = false,
+							},
+							pycodestyle = {
+								enabled = false,
+							},
+							pyflakes = {
+								enabled = false,
+							},
+							yapf = {
+								enabled = false,
+							},
+						},
+					},
+				},
 			})
-			-- lspconfig.basedpyright.setup({
-			-- 	capabilities = capabilities,
-			-- })
+
+			-- RUFF CONFIG (LINTING AND FORMATTING)
+			lspconfig.ruff_lsp.setup({
+				capabilities = capabilities,
+			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
