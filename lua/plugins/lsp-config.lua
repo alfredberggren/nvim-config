@@ -7,15 +7,15 @@ return {
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
-    lazy = false,
-    opts = {
-      auto_install = true,
-    },
-		--config = function()
---			require("mason-lspconfig").setup({
---				ensure_installed = { "lua_ls", "pylsp" },
---			})
---		end,
+		lazy = false,
+		opts = {
+			auto_install = true,
+		},
+		-- 	config = function()
+		-- 	require("mason-lspconfig").setup({
+		-- 		ensure_installed = { "lua_ls", "pylsp" },
+		-- 	})
+		-- end,
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -29,7 +29,20 @@ return {
 			})
 			lspconfig.pylsp.setup({
 				capabilities = capabilities,
+        -- if pylint is enabled this way it doesnt understand venv
+				-- settings = {
+				-- 	pylsp = {
+				-- 		plugins = {
+				-- 			pylint = {
+				-- 				enabled = true,
+				-- 			},
+				-- 		},
+				-- 	},
+				-- },
 			})
+			-- lspconfig.basedpyright.setup({
+			-- 	capabilities = capabilities,
+			-- })
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})

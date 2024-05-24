@@ -8,6 +8,7 @@ return {
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,
+        -- ALREADY enabled in pylsp
         null_ls.builtins.diagnostics.pylint,
       },
     })
