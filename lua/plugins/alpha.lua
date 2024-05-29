@@ -40,5 +40,7 @@ return {
     }
 
     alpha.setup(dashboard.opts)
+
+    vim.keymap.set('n', '<leader>se', ':wa<CR>:Alpha<CR>', {})
   end,
 }
