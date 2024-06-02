@@ -1,5 +1,0 @@
-none-ls builtins:
-  https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
-
-auto-pair config:
-  https://github.com/windwp/nvim-autopairs

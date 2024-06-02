@@ -1,4 +1,7 @@
 *.json
+important_links.txt
+potential_plugins.txt
+
 # Compiled Lua sources
 luac.out
 
