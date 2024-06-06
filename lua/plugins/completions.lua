@@ -36,12 +36,12 @@ return {
 					["<C-e>"] = cmp.mapping.abort(),
 					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 
-          -- SCROLLING COMPLETIONS WITH TAB
+					-- SCROLLING COMPLETIONS WITH TAB
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_next_item()
-						elseif luasnip.expand_or_jumpable() then
-							luasnip.expand_or_jump()
+						-- elseif luasnip.expand_or_jumpable() then
+						-- 	luasnip.expand_or_jump()
 						else
 							fallback()
 						end
@@ -49,15 +49,15 @@ return {
 					["<S-Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_prev_item()
-						elseif luasnip.jumpable(-1) then
-							luasnip.jump(-1)
+						-- elseif luasnip.jumpable(-1) then
+						-- 	luasnip.jump(-1)
 						else
 							fallback()
 						end
 					end, { "i", "s" }),
-      
 				}),
-				sources = cmp.config.sources({
+
+        sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					-- { name = "vsnip" }, -- For vsnip users.
 					{ name = "luasnip" }, -- For luasnip users.
