@@ -14,5 +14,5 @@ vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 -- Navigating buffers
-vim.keymap.set('n', '<C-Tab>', ':bnext<CR>')
+vim.keymap.set('n', '<S-Tab>', ':bnext<CR>')
 vim.keymap.set('n', '<C-d>', ':bdelete<CR>')
