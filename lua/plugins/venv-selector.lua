@@ -13,4 +13,4 @@ return {
     keys = {
       { ",v", "<cmd>VenvSelect<cr>" },
     },
-},
+}
