@@ -61,7 +61,7 @@ return {
 			})
 
 			-- RUFF CONFIG (LINTING AND FORMATTING)
-			lspconfig.ruff_lsp.setup({
+			lspconfig.ruff.setup({
 				capabilities = capabilities,
 			})
 
