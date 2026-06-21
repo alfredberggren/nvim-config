@@ -34,7 +34,6 @@ vim.api.nvim_create_user_command('Cheatsheet', function()
 
   -- Load target file data and assign markdown rendering rules
   vim.cmd('edit ' .. filepath)
-  vim.bo[buf].filetype = 'markdown'
 
   -- Set local toggle mappings to quickly dismiss window with 'q' or 'Esc'
   vim.keymap.set('n', 'q', '<cmd>close<CR>', { buffer = buf, silent = true })
