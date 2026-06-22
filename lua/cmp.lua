@@ -27,8 +27,9 @@ function cmp_init()
 end
 
 vim.cmd("autocmd BufReadPost * lua cmp_init()")
--- Todo: create refresh cmd
+
 vim.api.nvim_create_user_command("RefreshCTags", function()
+  vim.cmd("w");
 	local current_buf_path = vim.api.nvim_buf_get_name(0)
 	vim.cmd("!~/.config/nvim/lua/generate_ctags.sh " .. current_buf_path .. " refresh") -- Generate ctags for the file.
 end, {})
